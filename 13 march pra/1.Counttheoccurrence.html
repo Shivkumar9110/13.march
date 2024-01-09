@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="largeString">Enter the large String:</label>
+        <input type="text" name="largeString" id="largeString">
+
+        <input type="button" value="OUTPUT" id="btn" title="Final submit">
+    </form>
+
+    <div class="output">
+        <h1 id="outputValue"></h1>
+        <h3 id="outputchar"></h3>
+    </div>
+
+    <div>
+        <h2 id="finaloutput"></h2>
+    </div>
+
+    <script>
+
+
+        let btn=document.getElementById('btn')
+        btn.addEventListener("click", (event) =>
+        {
+            event.preventDefault()
+
+            // Catch the input value
+            let largeString=document.querySelector("#largeString")
+            let value1=largeString.value;
+
+            // puting the value on the screen.
+            let output=document.getElementById('outputValue')
+            output.innerHTML=value1;            
+            
+            // sperate operator using .
+                    // Creating new blank array .
+                    let array1=new Array(...value1);
+
+            
+            
+
+            // display the charactor array.
+            let chr =document.getElementById('outputchar')
+            chr.innerHTML=array1;
+
+            let charLenght=array1.length
+
+            // display the total charactor count.
+            let count=document.querySelector('#finaloutput');
+            count.style.color="red"
+            count.innerHTML=  ` The total charactor is ${charLenght}`
+
+        })
+        
+
+        
+    </script>
+</body>
+</html>
